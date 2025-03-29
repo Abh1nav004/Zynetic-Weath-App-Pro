@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./components/Search";
 import WeatherCard from "./components/WeatherCard";
 import Loader from "./components/Loader";
-import ErrorMessage from "./components/ErrorMessage";
-import RecentSearches from "./components/RecentSearches";
+import ErrorMessage from "./components/ErrorMess";
+import RecentSearches from "./components/Rec_Search";
 import ThemeToggle from "./components/ThemeToggle";
-import ForecastSection from "./components/ForecastSection";
+import ForecastSection from "./components/Forecast";
 
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
