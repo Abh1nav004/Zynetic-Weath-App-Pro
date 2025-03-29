@@ -15,22 +15,19 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Retrieve recent searches from localStorage
   const [recentSearches, setRecentSearches] = useState(() => {
     return JSON.parse(localStorage.getItem("recentSearches")) || [];
   });
 
-  // Retrieve dark mode setting from localStorage
   const [darkMode, setDarkMode] = useState(() => {
     return JSON.parse(localStorage.getItem("darkMode")) ?? false;
   });
 
-  // Save recent searches to localStorage
+
   useEffect(() => {
     localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
   }, [recentSearches]);
 
-  // Save dark mode setting to localStorage
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
