@@ -24,16 +24,11 @@ Storage: LocalStorage (theme and recent searches)
 📦 Installation
 Clone the repository:
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/weather-dashboard.git
-cd weather-dashboard
+
+git clone https://github.com/Abh1nav004/Zynetic-Weath-App-Pro
+cd weather-pro-dashboard
 Install dependencies:
 
-bash
-Copy
-Edit
 npm install
 Set up API Key:
 
@@ -41,17 +36,11 @@ Create a .env file in the root directory.
 
 Add your OpenWeatherMap API key:
 
-env
-Copy
-Edit
+
 VITE_WEATHER_API_KEY=your_api_key_here
 Start the development server:
 
-bash
-Copy
-Edit
 npm run dev
-📸 Screenshots
 
 
 🛠 How It Works
