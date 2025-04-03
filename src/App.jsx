@@ -13,13 +13,8 @@ const App = () => {
   });
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
   const handleSearch = async (city) => {
@@ -29,9 +24,12 @@ const App = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
       );
       const data = await res.json();
-      if (data.cod === 200) {
+      
+      if (res.ok) {
         setWeatherData(data);
-        setRecentSearches((prev) => [...new Set([city, ...prev])].slice(0, 5));
+        setRecentSearches((prev) => [city, ...prev.filter(item => item !== city)].slice(0, 5));
+      } else {
+        console.error("City not found:", data.message);
       }
     } catch (error) {
       console.error("Error fetching weather data:", error);
